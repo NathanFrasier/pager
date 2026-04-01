@@ -1260,12 +1260,13 @@ def read_alias_memory(remote_index):
     return temp # int.from_bytes(f.read(1), 'big')
 
 def write_alias_memory(remote_index, alias_bytearray):
-    f = open('alias_memory', 'rb+')
-    f.seek( remote_index * 16 )
-    for i in range(0, 16):
-        value = alias_bytearray[i]
-        f.write(value.to_bytes(1, 'big'))
-    f.close()
+    if (remote_index <= 700):
+        f = open('alias_memory', 'rb+')
+        f.seek( remote_index * 16 )
+        for i in range(0, 16):
+            value = alias_bytearray[i]
+            f.write(value.to_bytes(1, 'big'))
+        f.close()
 
 def next_alias(remote_index):
     loop_count = 0
