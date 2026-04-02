@@ -801,10 +801,10 @@ def handle_echo(to_index, from_index, body): # detect if messages sent are out o
     if match == True:
         increment_queue_count(queue_id, entry_index) # saw this packet out on network
 
-def handle_command(command):
+def handle_command():
     pass
 
-def handle_chat(chat):
+def handle_chat():
     pass
 
 def handle_page(to_index, from_index, body):
